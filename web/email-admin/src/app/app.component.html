@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">{{ title }} Dashboard</mat-toolbar>
+<mat-card>AARC Membership Statistics
+  <mat-list>
+    <!--
+    <mat-list-item>Club members: {{ clubContacts.numberOfClubMembers }}</mat-list-item>
+    -->
+    <mat-list-item>Club members: {{ clubContacts['members'] }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Email contacts: {{ clubContacts['contacts']  }}</mat-list-item>
+    <mat-list-item>
+      <button mat-raised-button primary color='primary' (click)="refreshClubContacts()"> Refresh</button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+<mat-card>Race Registrations
+  <mat-list>
+    <mat-list-item>Number of races: {{ raceRegContacts['races'] }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Total # contacts (opted in): {{ raceRegContacts['contacts'] }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Club members already on list: {{ raceRegContacts['members'] }}</mat-list-item>
+    <mat-list-item>
+      <button mat-raised-button primary color='primary' (click)="refreshRaceRegContacts()"> Refresh</button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+<mat-card>Email Logs
+  <mat-list>
+    <mat-list-item>Weekly emails relayed: {{ emails['relayed'] }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Most recent: {{ emails['last-date'] }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Date of email: {{ emails['last-relayed'] }}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Number relayed: {{ emails['total-sent']  }}</mat-list-item>
+    <mat-list-item>
+      <button mat-raised-button primary color='primary' (click)="refreshEmails()"> Go</button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
